@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import IntroSequence from "../components/IntroSequence";
+---
+
+<Layout>
+  <section>
+    <IntroSequence client:load/>
+  </section>
+</Layout>
+
+<style>
+  div {
+    height: 700px;
+  }
+</style>

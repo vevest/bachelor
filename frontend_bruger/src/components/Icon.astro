@@ -1,0 +1,13 @@
+---
+import { Icon as IconComponent } from 'webcoreui/astro'
+import da from "/icons/languages/da.svg?raw"
+import en from "/icons/languages/en.svg?raw"
+
+const iconSet = {
+    'da': da,
+    'en': en
+}
+---
+
+
+<IconComponent iconSet={iconSet} {...Astro.props} />

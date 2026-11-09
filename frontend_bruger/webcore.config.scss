@@ -1,0 +1,26 @@
+
+:root {
+    --w-color-scheme: dark;
+    --w-color-primary: #FFF;        // Primary text
+    --w-color-primary-10: #DDD;     // Secondary text
+    --w-color-primary-20: #BBB;     // Muted text
+    --w-color-primary-30: #757575;  // Placeholders & disabled states
+    --w-color-primary-40: #333;     // Hover states
+    --w-color-primary-50: #252525;  // Borders
+    --w-color-primary-60: #111;     // Scrollbars & stripes
+    --w-color-primary-70: #000;     // Background
+
+    --w-color-info: #0ABDE3;
+    --w-color-info-accent: #48DBFB;
+    --w-color-info-fg: #000;
+    --w-color-success: #10AC84;
+    --w-color-success-accent: #1DD1A1;
+    --w-color-success-fg: #000;
+    --w-color-warning: #FF9F43;
+    --w-color-warning-accent: #f7AA61;
+    --w-color-warning-fg: #000;
+    --w-color-alert: #de3233;
+    --w-color-alert-accent: #EE5253;
+    --w-color-alert-fg: #FFF;
+    --w-color-overlay: #0000009e;   // Overlays such as modals or sheets
+}
