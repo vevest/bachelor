@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Lag_2" data-name="Lag 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.52 42.52">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #593788;
+      }
+
+      .cls-2 {
+        stroke-linecap: round;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: .85px;
+      }
+    </style>
+  </defs>
+  <g id="Sundhedsindsats_Lilla">
+    <circle class="cls-1" cx="21.26" cy="21.26" r="21.26"/>
+    <path id="Vector_1158" data-name="Vector 1158" class="cls-2" d="M16.89,22.8h1.38l1.02-1.75,1.98,3.42,2.12-4.29,1.17,2.62h1.08"/>
+    <path class="cls-3" d="M29.92,15.03c-2.06-2.06-5.41-2.06-7.47,0l-1.18,1.18-1.18-1.18c-2.06-2.06-5.41-2.06-7.47,0-2.06,2.06-2.06,5.41,0,7.47l1.18,1.18,7.47,7.47,7.47-7.47,1.18-1.18c2.06-2.06,2.06-5.41,0-7.47Z"/>
+  </g>
+</svg>

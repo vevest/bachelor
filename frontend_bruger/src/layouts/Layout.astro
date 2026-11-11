@@ -1,5 +1,12 @@
 ---
 import Navigation from "../components/Navigation.astro";
+import ServiceCard from '../components/ServiceCard.astro'
+
+const accommodations = [
+    { icon: 'meal', name: 'Free meals' },
+    { icon: 'shower', name: 'Showers' },
+    { icon: 'shelter', name: 'Sleeping facilities' }
+]
 ---
 
 <!doctype html>
@@ -15,5 +22,6 @@ import Navigation from "../components/Navigation.astro";
   <body>
     <slot />
     <Navigation />
+    <ServiceCard name="Kirkens Korshær" accommodations={accommodations} />
   </body>
 </html>

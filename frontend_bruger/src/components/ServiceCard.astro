@@ -1,0 +1,63 @@
+---
+import { Card, Badge, Button } from 'webcoreui/astro'
+import Icon from './Icon.astro'
+
+const { name, accommodations = [] } = Astro.props
+---
+
+<Card className="service_card">
+    <div class="card_header">
+        <h2>{name}</h2>
+        <Badge theme="success">Open</Badge>
+    </div>
+
+    <div class="card_content">
+        <ul class="accommodations"> {accommodations.map((item) => (
+                <li>
+                    <Icon class="card_icon" type={item.icon} />
+                    <span>{item.name}</span>
+                </li>
+            ))}
+        </ul>
+
+        <div class="card_actions">
+            <Button>See more</Button>
+            <Button>Directions</Button>
+        </div>
+    </div>
+</Card>
+
+<style>
+    .service_card {
+        max-width: 800px;
+    }
+    
+    .card_content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+    }
+
+    .accommodations {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        list-style: none;
+        padding: 1rem;
+        margin: 0;
+        border-radius: 12px;
+    }
+
+    .accommodations li {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        column-gap: 1rem;
+    }
+
+    .card_actions {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+</style>
