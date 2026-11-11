@@ -1,0 +1,25 @@
+---
+import { BottomNavigation } from 'webcoreui/astro'
+import map from '/icons/map.svg?raw'
+import settings from '/icons/settings.svg?raw'
+
+const items = [
+    {
+        icon: 'home',
+        name: 'Home',
+        href: '/'
+    },
+    {
+        icon: map,
+        name: 'Kort',
+        href: '/map'
+    },
+    {
+        icon: settings,
+        name: 'Indstillinger',
+        href: '/settings'
+    }
+]
+---
+
+<BottomNavigation items={items} />
