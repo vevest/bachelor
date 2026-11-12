@@ -21,5 +21,5 @@ export default function Stepcounter({ step }: { step: number }) {
     }
   }, [step]);
 
-  return <Stepper items={steps} />;
+  return <Stepper items={steps} vertical={false} className="intro-stepper" />;
 }
