@@ -1,12 +1,30 @@
 ---
 import Navigation from "../components/Navigation.astro";
 import ServiceCard from '../components/ServiceCard.astro'
+import type { service } from '../types/service.type'
 
-const accommodations = [
-    { icon: 'meal', name: 'Free meals' },
-    { icon: 'shower', name: 'Showers' },
-    { icon: 'shelter', name: 'Sleeping facilities' }
-]
+const exampleService: service = {
+  id: '1',
+  name: 'Mariatjenesten',
+  logo: '/icons/logos/kirkens_korshaer_2.png',
+  isOpen: true,
+  openUntil: '18:00',
+  address: 'Istedgade 20, 1650 København V',
+  accommodations: [
+    {
+      title: 'Hot meal',
+      iconPath: '/icons/meal.svg'
+    },
+    {
+      title: 'Shower',
+      iconPath: '/icons/shower.svg'
+    },
+    {
+      title: 'Shelter',
+      iconPath: '/icons/shelter.svg'
+    }
+  ]
+}
 ---
 
 <!doctype html>
@@ -22,6 +40,6 @@ const accommodations = [
   <body>
     <slot />
     <Navigation />
-    <ServiceCard name="Kirkens Korshær" accommodations={accommodations} />
+    <ServiceCard service={exampleService} />
   </body>
 </html>

@@ -1,41 +1,83 @@
----
-import { Card, Badge, Button } from 'webcoreui/astro'
-import Icon from './Icon.astro'
 
-const { name, accommodations = [] } = Astro.props
+---
+import { Badge, Button, Card, Flex, Grid } from 'webcoreui/astro'
+import type { service } from '../types/service.type'
+
+interface Props {
+    service: service
+}
+
+const { service } = Astro.props
 ---
 
 <Card className="service_card">
-    <div class="card_header">
-        <h2>{name}</h2>
-        <Badge theme="success">Open</Badge>
-    </div>
+    <Grid className='service_card_grid'>
+        <img class="service_logo" src={service.logo} alt="Kirkens Korshær logo" />
 
-    <div class="card_content">
-        <ul class="accommodations"> {accommodations.map((item) => (
+        <Badge className='open_badge' theme={service.isOpen ? 'success' : 'alert'}>
+            {service.isOpen ? 'Open' : 'Closed'}
+        </Badge>
+
+        <h2>{service.name}</h2>
+
+        <p class="opening_hours">
+            {service.isOpen && service.openUntil ? `Open until ${service.openUntil}` : ''}
+        </p>
+
+        <ul class="accommodations">
+            {service.accommodations.slice(0, 3).map((item) => (
                 <li>
-                    <Icon class="card_icon" type={item.icon} />
-                    <span>{item.name}</span>
+                    <img class="card_icon" src={item.iconPath} alt="" />
+                    <span>{item.title}</span>
                 </li>
             ))}
         </ul>
+        
 
-        <div class="card_actions">
+        <Flex direction="column" gap="sm" className="card_actions">
             <Button>See more</Button>
             <Button>Directions</Button>
-        </div>
-    </div>
+        </Flex>
+    </Grid>
 </Card>
 
 <style>
     .service_card {
-        max-width: 800px;
+        max-width: 600px;
+        background-color: var(--w-color-primary);
     }
-    
-    .card_content {
+
+    .service_card_grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        gap: 1rem;
+        grid-template-rows: 1fr 0.75fr 2.5fr;
+        max-height: 16rem;
+    }
+
+    .service_logo {
+        max-width: 7.5rem;
+        object-fit: contain;
+    }
+
+    .open_badge {
+        text-align: center;
+        place-self: start end;
+        padding: 0.3rem 0.8rem;
+        border-radius: 0.2rem;
+        font-size: 0.7rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .opening_hours {
+        font-size: 0.8rem;
+        text-align: end;
+        place-self: start end;
+        margin-top: 0.2rem;
     }
 
     .accommodations {
@@ -43,21 +85,38 @@ const { name, accommodations = [] } = Astro.props
         flex-direction: column;
         gap: 1rem;
         list-style: none;
-        padding: 1rem;
+        padding: 0 0.2rem 0 0;
         margin: 0;
-        border-radius: 12px;
     }
 
     .accommodations li {
-        display: grid;
-        grid-template-columns: 1fr 5fr;
-        column-gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        column-gap: 0.3rem;
+        align-items: center;
+        span {
+            font-size: 0.8rem;
+        }
+    }
+
+    .card_icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        object-fit: contain;
     }
 
     .card_actions {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        place-self: end;
+        row-gap: 1rem;
+
+        button {
+            background-color: purple;
+            color: var(--w-color-primary);
+            border-radius: 0.3rem;
+            padding: 0.8rem 0.6rem;
+        }
     }
 
 </style>
