@@ -1,0 +1,6 @@
+@use "webcoreui/styles" as *;
+@include setup(
+  (
+    theme: light,
+  )
+);
