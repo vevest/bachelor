@@ -40,9 +40,16 @@ export default function IntroSequence() {
         {stepcount == 2 ? (
           <>
             <Card title="Welcome" secondary={true}>
-              Please choose your prefered language below
+              Please tell us about accommodations you're looking for
             </Card>
-            <LanguageSelect></LanguageSelect>
+            <Card>
+              <CheckboxCard label="food" name="food"></CheckboxCard>
+              <CheckboxCard
+                label="a place to sleep"
+                name="shelter"
+              ></CheckboxCard>
+              <CheckboxCard label="guidance" name="guidance"></CheckboxCard>
+            </Card>
           </>
         ) : (
           false
