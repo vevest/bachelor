@@ -1,5 +1,5 @@
 export type localSettings = {
   language: string;
-  situation: { string: boolean };
-  accomodations: { string: boolean };
+  situation: Record<string, boolean>;
+  accomodations: Record<string, boolean>;
 };
