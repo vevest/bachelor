@@ -1,0 +1,53 @@
+[
+  {
+    "service_pk": "service-001",
+    "organisation_fk": "org-001",
+    "service_name": "Digital hjælp",
+    "service_street": "Eksempelvej",
+    "service_street_number": "12A",
+    "service_zip": "8000",
+    "service_city": "Aarhus C",
+    "service_phone": "+45 0000 0001",
+    "service_email": "digital@example.org",
+    "service_needs_cpr": false,
+    "service_website": "https://example.org/digital",
+    "service_cvr": "00000001",
+    "created_at": "2026-11-13T09:00:00Z",
+    "updated_at": "2026-11-13T09:00:00Z",
+    "deleted_at": null
+  },
+  {
+    "service_pk": "service-002",
+    "organisation_fk": "org-001",
+    "service_name": "Borgerrådgivning",
+    "service_street": "Eksempelvej",
+    "service_street_number": "12B",
+    "service_zip": "8000",
+    "service_city": "Aarhus C",
+    "service_phone": "+45 0000 0002",
+    "service_email": "raadgivning@example.org",
+    "service_needs_cpr": true,
+    "service_website": "https://example.org/raadgivning",
+    "service_cvr": "00000002",
+    "created_at": "2026-11-13T09:15:00Z",
+    "updated_at": "2026-11-13T10:30:00Z",
+    "deleted_at": null
+  },
+  {
+    "service_pk": "service-003",
+    "organisation_fk": "org-002",
+    "service_name": "Sprogcafé",
+    "service_street": "Demogade",
+    "service_street_number": "7",
+    "service_zip": "5000",
+    "service_city": "Odense C",
+    "service_phone": "+45 0000 0003",
+    "service_email": "sprog@example.org",
+    "service_needs_cpr": false,
+    "service_website": "https://example.org/sprog",
+    "service_cvr": "00000003",
+    "created_at": "2026-11-13T09:30:00Z",
+    "updated_at": "2026-11-13T09:30:00Z",
+    "deleted_at": null
+  }
+]
