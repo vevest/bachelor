@@ -1,15 +1,37 @@
 import { useEffect, useState } from "react";
-import Stepcounter from "./Stepcounter";
 import { Button, Card, Icon } from "webcoreui/react";
 import LanguageSelect from "./LanguageSelect";
 import CheckboxCard from "./CheckboxCard";
+import { setSetting, getSetting } from "../utils/localDB";
+import { situations } from "../types/situation.type";
+import { accommodations } from "../types/accommodation.type";
 
 export default function IntroSequence() {
   const [stepcount, setStepcount] = useState(0);
 
   useEffect(() => {
-    console.log(stepcount);
-  }, [stepcount]);
+    async function initializeSettings() {
+      if ((await getSetting("situation")) === undefined) {
+        await setSetting(
+          "situation",
+          Object.fromEntries(situations.map(({ id }) => [id, false])),
+        );
+      }
+
+      if ((await getSetting("accommodations")) === undefined) {
+        await setSetting(
+          "accommodations",
+          Object.fromEntries(accommodations.map(({ id }) => [id, false])),
+        );
+      }
+
+      if ((await getSetting("language")) === undefined) {
+        await setSetting("language", "en");
+      }
+    }
+
+    void initializeSettings().catch(console.error);
+  }, []);
   return (
     <>
       <section>
@@ -18,7 +40,7 @@ export default function IntroSequence() {
             <Card title="Welcome" secondary={true}>
               Please choose your prefered language below
             </Card>
-            <LanguageSelect></LanguageSelect>
+            <LanguageSelect onChange={setSetting}></LanguageSelect>
           </>
         ) : (
           false
@@ -29,9 +51,16 @@ export default function IntroSequence() {
               Please tell us about applies to your current situation
             </Card>
             <Card>
-              <CheckboxCard label="homeless" name="homeless"></CheckboxCard>
-              <CheckboxCard label="no cpr number" name="noCpr"></CheckboxCard>
-              <CheckboxCard label="jobless" name="jobless"></CheckboxCard>
+              {situations.map((situation) => {
+                return (
+                  <CheckboxCard
+                    key={situation.id}
+                    label={situation.label}
+                    value={situation.id}
+                    type="situation"
+                  ></CheckboxCard>
+                );
+              })}
             </Card>
           </>
         ) : (
@@ -43,12 +72,16 @@ export default function IntroSequence() {
               Please tell us about accommodations you're looking for
             </Card>
             <Card>
-              <CheckboxCard label="food" name="food"></CheckboxCard>
-              <CheckboxCard
-                label="a place to sleep"
-                name="shelter"
-              ></CheckboxCard>
-              <CheckboxCard label="guidance" name="guidance"></CheckboxCard>
+              {accommodations.map((accommodation) => {
+                return (
+                  <CheckboxCard
+                    key={accommodation.id}
+                    label={accommodation.label}
+                    value={accommodation.id}
+                    type="accommodations"
+                  ></CheckboxCard>
+                );
+              })}
             </Card>
           </>
         ) : (

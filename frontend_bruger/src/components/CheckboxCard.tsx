@@ -1,20 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, Checkbox } from "webcoreui/react";
-
-type CheckboxCardProbs = {
-  name: string;
+import { getSetting, setSetting } from "../utils/localDB";
+import { setCheckboxSetting } from "../utils/localDB";
+type CheckboxCardProps = {
   label: string;
+  type: "accommodations" | "situation";
+  value: string;
 };
-export default function CheckboxCard(probs: CheckboxCardProbs) {
-  const [checked, setCheckbox] = useState(false);
 
+export default function CheckboxCard(props: CheckboxCardProps) {
+  const [checked, setCheckbox] = useState(false);
+  useEffect(() => {}, []);
   return (
     <Card>
       <Checkbox
-        name={probs.name}
-        label={probs.label}
-        // You can also use onChange
-        onClick={(e) => setCheckbox(e.target.checked)}
+        label={props.label}
+        value={props.value}
+        onChange={(e) => {
+          void setCheckboxSetting(
+            props.type,
+            props.value,
+            e.currentTarget.checked,
+          ).catch(console.error);
+        }}
+        onClick={(e) => {
+          setCheckbox(e.currentTarget.checked);
+        }}
       />
     </Card>
   );
