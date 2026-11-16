@@ -1,4 +1,3 @@
-
 ---
 import { Badge, Button, Card, Flex, Grid } from 'webcoreui/astro'
 import type { service } from '../types/service.type'
@@ -6,36 +5,36 @@ import type { service } from '../types/service.type'
 interface Props {
     service: service
 }
-
 const { service } = Astro.props
 ---
 
 <Card className="service_card">
     <Grid className='service_card_grid'>
-        <img class="service_logo" src={service.logo} alt="Kirkens Korshær logo" />
+        <img class="service_logo" src={service.service_logo} alt="" />
 
-        <Badge className='open_badge' theme={service.isOpen ? 'success' : 'alert'}>
-            {service.isOpen ? 'Open' : 'Closed'}
+        <Badge className='open_badge' theme={service.service_is_open ? 'success' : 'alert'}>
+            {service.service_is_open ? 'Open' : 'Closed'}
         </Badge>
 
-        <h2>{service.name}</h2>
+        <h2>{service.service_name}</h2>
 
         <p class="opening_hours">
-            {service.isOpen && service.openUntil ? `Open until ${service.openUntil}` : ''}
+            {service.service_is_open && service.service_open_until ? `Open until ${service.service_open_until}` : ''}
         </p>
 
         <ul class="accommodations">
-            {service.accommodations.slice(0, 3).map((item) => (
+            {service.service_accommodations.slice(0, 3).map((item) => (
                 <li>
                     <img class="card_icon" src={item.iconPath} alt="" />
                     <span>{item.title}</span>
                 </li>
             ))}
         </ul>
-        
 
         <Flex direction="column" gap="sm" className="card_actions">
-            <Button>See more</Button>
+            <Button href={`/services/${service.service_slug}`}>
+                See more
+            </Button>
             <Button>Directions</Button>
         </Flex>
     </Grid>
