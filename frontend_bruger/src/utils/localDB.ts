@@ -58,3 +58,20 @@ export async function setCheckboxSetting(
     [id]: checked,
   });
 }
+
+export async function settingsValid() {
+  if (
+    (await getSetting("accommodations")) !== undefined ||
+    (await getSetting("situation")) !== undefined
+  ) {
+  return true
+  } else if (
+    (await getSetting("accommodations")) === undefined ||
+    (await getSetting("situation")) === undefined ||
+    (await getSetting("language")) === undefined
+  ) {
+return false
+  } else {
+    return;
+  }
+}

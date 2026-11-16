@@ -1,5 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { settingsValid } from "../utils/localDB";
+// If the user is not logged in, redirect them to the login page
+
+
 ---
 
 <Layout />
+
+<script type="module">
+import { redirect } from "../utils/redirector";
+
+redirect()
+</script>

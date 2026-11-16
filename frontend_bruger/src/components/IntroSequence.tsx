@@ -11,6 +11,12 @@ export default function IntroSequence() {
 
   useEffect(() => {
     async function initializeSettings() {
+      if (
+        (await getSetting("accommodations")) !== undefined &&
+        (await getSetting("situation")) !== undefined
+      ) {
+        window.location.href = "/";
+      }
       if ((await getSetting("situation")) === undefined) {
         await setSetting(
           "situation",
@@ -37,8 +43,9 @@ export default function IntroSequence() {
       <section>
         {stepcount == 0 ? (
           <>
-            <Card title="Welcome" secondary={true}>
-              Please choose your prefered language below
+            <Card secondary={true}>
+              <h3>Welcome</h3>
+              <p> Please choose your prefered language below</p>
             </Card>
             <LanguageSelect onChange={setSetting}></LanguageSelect>
           </>
@@ -47,8 +54,9 @@ export default function IntroSequence() {
         )}
         {stepcount == 1 ? (
           <>
-            <Card title="Welcome" secondary={true}>
-              Please tell us about applies to your current situation
+            <Card secondary={true}>
+              <h3>Your situation</h3>
+              <p>Please tell us about applies to your current situation</p>
             </Card>
             <Card>
               {situations.map((situation) => {
@@ -68,8 +76,9 @@ export default function IntroSequence() {
         )}
         {stepcount == 2 ? (
           <>
-            <Card title="Welcome" secondary={true}>
-              Please tell us about accommodations you're looking for
+            <Card secondary={true}>
+              <h3>Accommodations</h3>
+              <p>Please tell us about accommodations you're looking for</p>
             </Card>
             <Card>
               {accommodations.map((accommodation) => {
@@ -90,7 +99,11 @@ export default function IntroSequence() {
       </section>
       <Button
         onClick={() => {
-          setStepcount(stepcount + 1);
+          if (stepcount == 2) {
+            window.location.href = "/";
+          } else {
+            setStepcount(stepcount + 1);
+          }
         }}
         theme="outline"
       >

@@ -1,6 +1,23 @@
 @use "webcoreui/styles" as *;
 @include setup(
   (
+    fontRegular: "/fonts/Inter-Regular.ttf",
+    fontBold: "/fonts/Inter-Bold.ttf",
     theme: light,
   )
 );
+
+@font-face {
+  font-family: "Malik";
+  src: url("/fonts/Malik-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Malik";
+}
