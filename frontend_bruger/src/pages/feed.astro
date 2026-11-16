@@ -1,2 +1,16 @@
 ---
+import Layout from '../layouts/Layout.astro'
+import ServiceCard from '../components/ServiceCard.astro'
+import services from '../utils/eksempeldata.json'
+import type { service } from '../types/service.type'
+
+const serviceList: service[] = services
 ---
+
+<Layout>
+    {serviceList
+        .filter((service) => service.deleted_at === null)
+        .map((service) => (
+            <ServiceCard service={service} />
+        ))}
+</Layout>
