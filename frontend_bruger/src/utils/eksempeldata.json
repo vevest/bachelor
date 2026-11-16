@@ -1,53 +1,179 @@
 [
   {
     "service_pk": "service-001",
+    "service_slug": "mariatjenesten",
     "organisation_fk": "org-001",
-    "service_name": "Digital hjælp",
-    "service_street": "Eksempelvej",
-    "service_street_number": "12A",
-    "service_zip": "8000",
-    "service_city": "Aarhus C",
-    "service_phone": "+45 0000 0001",
-    "service_email": "digital@example.org",
+    "service_name": "Mariatjenesten",
+    "service_logo": "/icons/logos/kirkens_korshaer_2.png",
+    "service_is_open": true,
+    "service_open_until": "18:00",
+    "service_accommodations": [
+      {
+        "title": "Laundry access",
+        "iconPath": "/icons/laundry.svg"
+      },
+      {
+        "title": "Legal advice",
+        "iconPath": "/icons/advice.svg"
+      },
+      {
+        "title": "Hot meal",
+        "iconPath": "/icons/meal.svg"
+      }
+    ],
+    "service_street": "Istegade",
+    "service_street_number": "20",
+    "service_zip": "1650",
+    "service_city": "København V",
+    "service_phone": "+45 51834710",
+    "service_email": "mariatjenesten@kirkenskorshaer.dk",
     "service_needs_cpr": false,
-    "service_website": "https://example.org/digital",
-    "service_cvr": "00000001",
+    "service_website": "https://kirkenskorshaer.dk/sociale-tilbud/kirkens-korshaer-mariatjenesten/",
+    "service_cvr": "82883711",
     "created_at": "2026-11-13T09:00:00Z",
     "updated_at": "2026-11-13T09:00:00Z",
-    "deleted_at": null
+    "deleted_at": null,
+    "service_description": "The Mariatjenesten in Vesterbro is a day shelter and counselling service offering the possibility to be part of a social community. It provides a space where even the most marginalised can find belonging and support.",
+    "opening_hours": {
+        "Monday": "18:00-22:00",
+        "Tuesday": "12:00-16:00",
+        "Wednesday": "12:00-16:00 & 18:00-22:00",
+        "Thursday": "18:00-22:00",
+        "Friday": "12:00-16:00",
+        "Saturday": "Closed",
+        "Sunday": "Closed"
+    },
+    "service_news": [
+      {
+          "title": "New opening hours",
+          "date": "2026-11-15",
+          "description": "We have updated our opening hours for the winter season."
+      },
+      {
+          "title": "Christmas event",
+          "date": "2026-11-10",
+          "description": "Join us for our annual Christmas event."
+      }
+    ],
+    "service_long": "55.671825713444306",
+    "service_lat": "12.560406642328639"
   },
   {
     "service_pk": "service-002",
+    "service_slug": "shelter-in-hilleroedgade",
     "organisation_fk": "org-001",
-    "service_name": "Borgerrådgivning",
-    "service_street": "Eksempelvej",
-    "service_street_number": "12B",
-    "service_zip": "8000",
-    "service_city": "Aarhus C",
-    "service_phone": "+45 0000 0002",
-    "service_email": "raadgivning@example.org",
+    "service_name": "Shelter in Hillerødgade",
+    "service_logo": "/icons/logos/kirkens_korshaer_2.png",
+    "service_is_open": false,
+    "service_open_until": null,
+    "service_accommodations": [
+      {
+        "title": "Hot shower",
+        "iconPath": "/icons/shower.svg"
+      },
+      {
+        "title": "Legal advice",
+        "iconPath": "/icons/advice.svg"
+      },
+      {
+        "title": "Warm clothes",
+        "iconPath": "/icons/clothes.svg"
+      }
+    ],
+    "service_street": "Hillerødgade",
+    "service_street_number": "62-64",
+    "service_zip": "2200",
+    "service_city": "København N",
+    "service_phone": "+45 38348125",
+    "service_email": "hilleroedgade@kirkenskorshaer.dk",
     "service_needs_cpr": true,
-    "service_website": "https://example.org/raadgivning",
+    "service_website": "https://kirkenskorshaer.dk/sociale-tilbud/kirkens-korshaer-herberg-hilleroedgade/",
     "service_cvr": "00000002",
     "created_at": "2026-11-13T09:15:00Z",
     "updated_at": "2026-11-13T10:30:00Z",
-    "deleted_at": null
+    "deleted_at": null,
+    "service_description": "The shelter offers temporary accommodation to people with specific social problems who do not have, or cannot stay in, their own homes, and who are in need of support, care, and subsequent assistance.",
+    "opening_hours": {
+        "Monday": "OPEN 24/7",
+        "Tuesday": "OPEN 24/7",
+        "Wednesday": "OPEN 24/7",
+        "Thursday": "OPEN 24/7",
+        "Friday": "OPEN 24/7",
+        "Saturday": "OPEN 24/7",
+        "Sunday": "OPEN 24/7"
+    },
+    "service_news": [
+      {
+          "title": "New opening hours",
+          "date": "2026-11-15",
+          "description": "We have updated our opening hours for the winter season."
+      },
+      {
+          "title": "Christmas event",
+          "date": "2026-11-10",
+          "description": "Join us for our annual Christmas event."
+      }
+    ],
+    "service_long": "55.69703347682842",
+    "service_lat": "12.531839354746925"
   },
   {
     "service_pk": "service-003",
+    "service_slug": "emergency-night-shelter-hellig-kors-kirke",
     "organisation_fk": "org-002",
-    "service_name": "Sprogcafé",
-    "service_street": "Demogade",
-    "service_street_number": "7",
-    "service_zip": "5000",
-    "service_city": "Odense C",
-    "service_phone": "+45 0000 0003",
-    "service_email": "sprog@example.org",
+    "service_name": "Emergency Night Shelter in Copenhagen - Hellig Kors Kirke",
+    "service_logo": "/icons/logos/kirkens_korshaer_2.png",
+    "service_is_open": true,
+    "service_open_until": "20:00",
+    "service_accommodations": [
+      {
+        "title": "Place to sleep",
+        "iconPath": "/icons/shelter.svg"
+      },
+      {
+        "title": "Healtcare",
+        "iconPath": "/icons/health.svg"
+      },
+      {
+        "title": "Hot shower",
+        "iconPath": "/icons/shower.svg"
+      }
+    ],
+    "service_street": "Kapelvej",
+    "service_street_number": "38",
+    "service_zip": "2200",
+    "service_city": "København N",
+    "service_phone": "+45 20411163",
+    "service_email": "s.kristiansen@kirkenskorshaer.dk ",
     "service_needs_cpr": false,
-    "service_website": "https://example.org/sprog",
+    "service_website": "https://kirkenskorshaer.dk/sociale-tilbud/emergency-night-shelter-hellig-kors-kirke/",
     "service_cvr": "00000003",
     "created_at": "2026-11-13T09:30:00Z",
     "updated_at": "2026-11-13T09:30:00Z",
-    "deleted_at": null
+    "deleted_at": null,
+    "service_description": "The emergency night shelter at Hellig Kors Church is an overnight service available throughout the winter season. It provides shelter for the night for 40 vulnerable individuals. The shelter offers emergency overnight accommodation to vulnerable people. It also facilitates connections to other relevant services that users need help accessing- such as hospitals, psychiatric care, medical clinics, physiotherapy, detoxification programs, legal advice, and more. The opening hours are only valid during the winter months.",
+    "opening_hours": {
+        "Monday": "22:00-06:45",
+        "Tuesday": "22:00-06:45",
+        "Wednesday": "22:00-06:45",
+        "Thursday": "22:00-06:45",
+        "Friday": "22:00-06:45",
+        "Saturday": "22:00-06:45",
+        "Sunday": "22:00-06:45"
+    },
+    "service_news": [
+      {
+          "title": "New opening hours",
+          "date": "2026-11-15",
+          "description": "We have updated our opening hours for the winter season."
+      },
+      {
+          "title": "Christmas event",
+          "date": "2026-11-10",
+          "description": "Join us for our annual Christmas event."
+      }
+    ],
+    "service_long": "55.68774687861552",
+    "service_lat": "12.551514125910394"
   }
 ]
