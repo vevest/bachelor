@@ -1,37 +1,28 @@
 import { Select } from "webcoreui/react";
-import da from "/icons/languages/da.svg?raw";
-import en from "/icons/languages/en.svg?raw";
-
-const list = [
-  {
-    items: [
-      {
-        name: "Dansk",
-        value: "da",
-        icon: da,
-        subText: "(Danish)",
-      },
-      {
-        name: "English",
-        value: "en",
-        icon: en,
-        subText: "(English)",
-      },
-    ],
-  },
-];
-
-export default function LanguageSelect() {
+import { languages, type language } from "../types/language.type";
+const list = languages.map((language: language) => {
+  return {
+    name: language.title,
+    value: language.languageCode,
+    icon: language.icon,
+    subText: language.title,
+  };
+});
+type languageSelectProps={
+  onChange:any;
+}
+export default function LanguageSelect(props:languageSelectProps) {
   return (
     <Select
       name="selectLanguage"
       label="Select your Language"
-      itemGroups={list}
+      itemGroups={[{ items: list }]}
       required={true}
       showSearchBar={false}
       showSearchBarIcon={false}
-      onChange={(event) => console.log(event)}
-      onClose={(event) => console.log(event)}
+      onChange={(e) => {
+        props.onChange("language", e.value);
+      }}
     />
   );
 }
