@@ -8,14 +8,16 @@ const list = languages.map((language: language) => {
     subText: language.title,
   };
 });
-type languageSelectProps={
-  onChange:any;
-}
-export default function LanguageSelect(props:languageSelectProps) {
+type languageSelectProps = {
+  value?: string;
+  onChange: (key: "language", value: string) => void;
+};
+export default function LanguageSelect(props: languageSelectProps) {
   return (
     <Select
       name="selectLanguage"
       label="Select your Language"
+      value={props.value}
       itemGroups={[{ items: list }]}
       required={true}
       showSearchBar={false}

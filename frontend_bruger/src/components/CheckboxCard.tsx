@@ -6,6 +6,7 @@ type CheckboxCardProps = {
   label: string;
   type: "accommodations" | "situation";
   value: string;
+  checked?: boolean;
 };
 
 export default function CheckboxCard(props: CheckboxCardProps) {
@@ -16,6 +17,7 @@ export default function CheckboxCard(props: CheckboxCardProps) {
       <Checkbox
         label={props.label}
         value={props.value}
+        checked={props.checked ?? false}
         onChange={(e) => {
           void setCheckboxSetting(
             props.type,
