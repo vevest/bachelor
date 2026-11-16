@@ -1,0 +1,181 @@
+---
+import { Badge, Button, Card, Flex, Grid } from 'webcoreui/astro'
+import services from '../../utils/eksempeldata.json'
+import type { service } from '../../types/service.type'
+import Layout from '../../layouts/Layout.astro'
+
+export function getStaticPaths() {
+    return services
+        .filter((service) => service.deleted_at === null)
+        .map((service) => ({
+            params: {
+                service: service.service_slug
+            },
+            props: {
+                service
+            }
+        }))
+}
+
+interface Props {
+    service: service
+}
+
+const { service } = Astro.props
+---
+
+<Layout>
+    <Card className="service_info">
+        <Flex direction="row" alignment={{ horizontal: 'between', vertical: 'center' }}>
+            <button class="back-btn">Go back</button>
+            <Badge className='open_badge' theme={service.service_is_open ? 'success' : 'alert'}>
+                {service.service_is_open ? 'Open' : 'Closed'}
+            </Badge>
+        </Flex>
+        
+        <Flex direction="row" alignment={{ horizontal: 'between', vertical: 'end' }}>
+            <h2>{service.service_name}</h2>
+            <img class="service_logo" src={service.service_logo} alt="{service.service_name} logo" />
+        </Flex>
+    
+        <p class="service_description">{service.service_description}</p>
+    
+        <Grid className='service_info_grid'>
+            <ul class="opening_hours">
+                <h3>Opening hours</h3>
+                {Object.entries(service.opening_hours).map(([day, hours]) => (
+                    <li>
+                        <p class="opening_day">{day}</p>
+                        <p class="opening_hours">{hours}</p>
+                    </li>
+                ))}
+            </ul>
+    
+            <ul class="accommodations">
+                <h3>Accommodations</h3>
+                {service.service_accommodations.map((item) => (
+                    <li>
+                        <img class="service_icon" src={item.iconPath} alt="" />
+                        <span>{item.title}</span>
+                    </li>
+                ))}
+            </ul>
+    
+            <Button className='info_action'>Directions</Button>
+        </Grid>
+        <ul class="service_news">
+            <h3>Latest news</h3>
+            {[...service.service_news]
+            .sort((a, b) => b.date.localeCompare(a.date))
+            .map((news) => (
+                <li>
+                    <h4>{news.title}</h4>
+                    <p>{news.date}</p>
+                    <p>{news.description}</p>
+                </li>
+            ))}
+        </ul>
+    </Card>
+</Layout>
+
+
+
+<style>
+    .service_info {
+        background-color: white;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .back-btn {
+        background: none;
+        color: #5F368D;
+        font-size: 0.9rem;
+        border-radius: 0.3rem;
+        border: none;
+    }
+
+    .open_badge {
+        text-align: center;
+        place-self: start end;
+        padding: 0.7rem 0.9rem;
+        border-radius: 0.2rem;
+        font-size: 0.7rem;
+    }
+
+    .service_logo {
+        max-width: 5rem;
+        object-fit: contain;
+        place-self: start;
+        margin-top: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0;
+    }
+
+    .service_info_grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 5fr 1fr;
+        
+    }
+
+    h3 {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .opening_hours {
+        grid-column: 1/2;
+        grid-row: 1/3;
+        list-style: none;
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .opening_day {
+        margin: 0;
+        font-weight: 800;
+    }
+
+    .accommodations {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        list-style: none;
+        padding: 0 0.2rem 0 0;
+        margin: 0;
+    }
+
+    .accommodations li {
+        display: flex;
+        flex-direction: column;
+        column-gap: 0;
+        align-items: center;
+        margin-bottom: 0;
+        span {
+            font-size: 0.8rem;
+        }
+    }
+
+    .service_icon {
+        width: 2rem;
+        height: 2rem;
+        object-fit: contain;
+    }
+
+    .info_action {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        background-color: #5F368D;
+        color: white;
+        border-radius: 0.3rem;
+        padding: 0.9rem 0.7rem;
+    }
+
+</style>
