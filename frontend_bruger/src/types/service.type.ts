@@ -29,6 +29,6 @@ export type service = {
         date: string
         description: string
     }[]
-    service_long: number
-    service_lat: number
+    service_long: string
+    service_lat: string
 }

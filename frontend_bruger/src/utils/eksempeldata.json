@@ -9,15 +9,18 @@
     "service_open_until": "18:00",
     "service_accommodations": [
       {
-        "title": "Laundry access",
+        "id": "4",
+        "label": "Laundry access",
         "iconPath": "/icons/laundry.svg"
       },
       {
-        "title": "Legal advice",
+        "id": "7",
+        "label": "Legal advice",
         "iconPath": "/icons/advice.svg"
       },
       {
-        "title": "Hot meal",
+        "id": "1",
+        "label": "Hot meal",
         "iconPath": "/icons/meal.svg"
       }
     ],
@@ -55,8 +58,9 @@
           "description": "Join us for our annual Christmas event."
       }
     ],
-    "service_long": "55.671825713444306",
-    "service_lat": "12.560406642328639"
+
+    "service_long": "12.56036372449081",
+    "service_lat": "55.671837787169125"
   },
   {
     "service_pk": "service-002",
@@ -68,15 +72,18 @@
     "service_open_until": null,
     "service_accommodations": [
       {
-        "title": "Hot shower",
+        "id": "3",
+        "label": "Hot shower",
         "iconPath": "/icons/shower.svg"
       },
       {
-        "title": "Legal advice",
+        "id": "7",
+        "label": "Legal advice",
         "iconPath": "/icons/advice.svg"
       },
       {
-        "title": "Warm clothes",
+        "id": "5",
+        "label": "Warm clothes",
         "iconPath": "/icons/clothes.svg"
       }
     ],
@@ -114,8 +121,8 @@
           "description": "Join us for our annual Christmas event."
       }
     ],
-    "service_long": "55.69703347682842",
-    "service_lat": "12.531839354746925"
+    "service_long": "12.531774982164166",
+    "service_lat": "55.69707580186644"
   },
   {
     "service_pk": "service-003",
@@ -127,15 +134,18 @@
     "service_open_until": "20:00",
     "service_accommodations": [
       {
-        "title": "Place to sleep",
+        "id": "2",
+        "label": "Place to sleep",
         "iconPath": "/icons/shelter.svg"
       },
       {
-        "title": "Healtcare",
+        "id": "6",
+        "label": "Healtcare",
         "iconPath": "/icons/health.svg"
       },
       {
-        "title": "Hot shower",
+        "id": "3",
+        "label": "Hot shower",
         "iconPath": "/icons/shower.svg"
       }
     ],
@@ -173,7 +183,7 @@
           "description": "Join us for our annual Christmas event."
       }
     ],
-    "service_long": "55.68774687861552",
-    "service_lat": "12.551514125910394"
+    "service_long": "12.55141756682027",
+    "service_lat": "55.68783759661694"
   }
 ]

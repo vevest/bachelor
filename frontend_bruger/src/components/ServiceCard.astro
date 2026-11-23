@@ -26,7 +26,7 @@ const { service } = Astro.props
             {service.service_accommodations.slice(0, 3).map((item) => (
                 <li>
                     <img class="card_icon" src={item.iconPath} alt="" />
-                    <span>{item.title}</span>
+                    <span>{item.label}</span>
                 </li>
             ))}
         </ul>
@@ -35,7 +35,9 @@ const { service } = Astro.props
             <Button href={`/services/${service.service_slug}`}>
                 See more
             </Button>
-            <Button>Directions</Button>
+            <Button href={`/map?service=${service.service_slug}`}>
+                Directions
+            </Button>
         </Flex>
     </Grid>
 </Card>
