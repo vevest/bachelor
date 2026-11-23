@@ -1,8 +1,8 @@
 ---
-import { Badge, Button, Card, Flex, Grid } from 'webcoreui/astro'
 import services from '../../utils/eksempeldata.json'
 import type { service } from '../../types/service.type'
 import Layout from '../../layouts/Layout.astro'
+import ServiceInfo from '../../components/ServiceInfo.astro'
 
 export function getStaticPaths() {
     return services
@@ -25,57 +25,7 @@ const { service } = Astro.props
 ---
 
 <Layout>
-    <Card className="service_info">
-        <Flex direction="row" alignment={{ horizontal: 'between', vertical: 'center' }}>
-            <button class="back-btn">Go back</button>
-            <Badge className='open_badge' theme={service.service_is_open ? 'success' : 'alert'}>
-                {service.service_is_open ? 'Open' : 'Closed'}
-            </Badge>
-        </Flex>
-        
-        <Flex direction="row" alignment={{ horizontal: 'between', vertical: 'end' }}>
-            <h2>{service.service_name}</h2>
-            <img class="service_logo" src={service.service_logo} alt="{service.service_name} logo" />
-        </Flex>
-    
-        <p class="service_description">{service.service_description}</p>
-    
-        <Grid className='service_info_grid'>
-            <ul class="opening_hours">
-                <h3>Opening hours</h3>
-                {Object.entries(service.opening_hours).map(([day, hours]) => (
-                    <li>
-                        <p class="opening_day">{day}</p>
-                        <p class="opening_hours">{hours}</p>
-                    </li>
-                ))}
-            </ul>
-    
-            <ul class="accommodations">
-                <h3>Accommodations</h3>
-                {service.service_accommodations.map((item) => (
-                    <li>
-                        <img class="service_icon" src={item.iconPath} alt="" />
-                        <span>{item.title}</span>
-                    </li>
-                ))}
-            </ul>
-    
-            <Button className='info_action'>Directions</Button>
-        </Grid>
-        <ul class="service_news">
-            <h3>Latest news</h3>
-            {[...service.service_news]
-            .sort((a, b) => b.date.localeCompare(a.date))
-            .map((news) => (
-                <li>
-                    <h4>{news.title}</h4>
-                    <p>{news.date}</p>
-                    <p>{news.description}</p>
-                </li>
-            ))}
-        </ul>
-    </Card>
+<ServiceInfo service={service}></ServiceInfo>
 </Layout>
 
 

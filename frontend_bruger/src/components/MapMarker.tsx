@@ -7,7 +7,7 @@ const iconOptions: IconOptions = {
   iconSize: [35, 35],
 };
 const markerIcon = new Icon(iconOptions);
-export default function MapMarker(props: MarkerProps, service: service) {
+export default function MapMarker(props: MarkerProps, service?: service) {
   return (
     <Marker position={props.position} icon={markerIcon}>
       <MapPopup></MapPopup>
