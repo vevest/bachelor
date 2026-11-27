@@ -1,14 +1,44 @@
 ---
 import { Badge, Button, Card, Flex, Grid } from 'webcoreui/astro'
 import type { service } from '../types/service.type'
+import Icon from './Icon.astro';
+import OpeningHoursToday from './OpenUntil';
 
+const descriptionMaxLength=100
 interface Props {
     service: service
 }
 const { service } = Astro.props
 ---
+<Card>
+    <Grid>
+        <Card flat={true}>
+            <Flex alignment={{horizontal:"between"}}>
+                <OpeningHoursToday openingHours={service.opening_hours} client:load></OpeningHoursToday>
+                <Badge theme={service.service_is_open?"success":"alert"}>{service.service_is_open?"open":"closed"}</Badge>
+            </Flex>
+        </Card>
+        <Card><h2>{service.service_name}</h2>
+        <p>{service.service_description.substring(0,descriptionMaxLength)}{service.service_description.length>descriptionMaxLength?"...":""}</p></Card>
+        <Flex>
+            <Card>
+        {service.service_accommodations.map((accommodation)=>{
+            return <Icon type={accommodation.icon} size={40}></Icon>
+        })}
+    </Card>
+    <Card>
+        <Grid>
+            <Button>See more</Button>
+            <Button>Directions</Button>
+        </Grid>
+     
+    </Card>
+        </Flex>
+    
+    </Grid>
+</Card>
 
-<Card className="service_card">
+<!-- <Card className="service_card">
     <Grid className='service_card_grid'>
         <img class="service_logo" src={service.service_logo} alt="" />
 
@@ -40,9 +70,9 @@ const { service } = Astro.props
             </Button>
         </Flex>
     </Grid>
-</Card>
+</Card> -->
 
-<style>
+<!-- <style>
     .service_card {
         background-color: white;
         max-width: 400px;
@@ -126,3 +156,4 @@ const { service } = Astro.props
     }
 
 </style>
+ -->

@@ -3,14 +3,23 @@ import Layout from '../layouts/Layout.astro'
 import ServiceCard from '../components/ServiceCard.astro'
 import services from '../utils/eksempeldata.json'
 import type { service } from '../types/service.type'
+import { Grid } from 'webcoreui/astro';
 
 const serviceList: service[] = services
 ---
 
 <Layout>
-    {serviceList
-        .filter((service) => service.deleted_at === null)
-        .map((service) => (
-            <ServiceCard service={service} />
-        ))}
+   <Grid>
+        {serviceList
+            .filter((service) => service.deleted_at === null)
+            .map((service) => (
+                <ServiceCard service={service} />
+            ))}
+                <div class="spacer"></div>
+   </Grid>
+     <style>
+    .spacer{
+      height: 75px;
+    }
+  </style>
 </Layout>

@@ -36,7 +36,7 @@ const {service}=Astro.props
                 <h3>Accommodations</h3>
                 {service.service_accommodations.map((item) => (
                     <li>
-                        <img class="service_icon" src={item.iconPath} alt="" />
+                        <img class="service_icon" src={item.icon} alt="" />
                         <span>{item.label}</span>
                     </li>
                 ))}
@@ -57,3 +57,103 @@ const {service}=Astro.props
             ))}
         </ul>
     </Card>
+
+    <style>
+    .service_info {
+        background-color: white;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .back-btn {
+        background: none;
+        color: #5F368D;
+        font-size: 0.9rem;
+        border-radius: 0.3rem;
+        border: none;
+    }
+
+    .open_badge {
+        text-align: center;
+        place-self: start end;
+        padding: 0.7rem 0.9rem;
+        border-radius: 0.2rem;
+        font-size: 0.7rem;
+    }
+
+    .service_logo {
+        max-width: 5rem;
+        object-fit: contain;
+        place-self: start;
+        margin-top: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0;
+    }
+
+    .service_info_grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 5fr 1fr;
+        
+    }
+
+    h3 {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .opening_hours {
+        grid-column: 1/2;
+        grid-row: 1/3;
+        list-style: none;
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .opening_day {
+        margin: 0;
+        font-weight: 800;
+    }
+
+    .accommodations {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        list-style: none;
+        padding: 0 0.2rem 0 0;
+        margin: 0;
+    }
+
+    .accommodations li {
+        display: flex;
+        flex-direction: column;
+        column-gap: 0;
+        align-items: center;
+        margin-bottom: 0;
+        span {
+            font-size: 0.8rem;
+        }
+    }
+
+    .service_icon {
+        width: 2rem;
+        height: 2rem;
+        object-fit: contain;
+    }
+
+    .info_action {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        background-color: #5F368D;
+        color: white;
+        border-radius: 0.3rem;
+        padding: 0.9rem 0.7rem;
+    }
+
+</style>

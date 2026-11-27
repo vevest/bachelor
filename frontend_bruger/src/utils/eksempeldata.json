@@ -11,17 +11,17 @@
       {
         "id": "4",
         "label": "Laundry access",
-        "iconPath": "/icons/laundry.svg"
+        "icon": "laundry"
       },
       {
         "id": "7",
         "label": "Legal advice",
-        "iconPath": "/icons/advice.svg"
+        "icon": "advice"
       },
       {
         "id": "1",
         "label": "Hot meal",
-        "iconPath": "/icons/meal.svg"
+        "icon": "meal"
       }
     ],
     "service_street": "Istegade",
@@ -38,27 +38,57 @@
     "deleted_at": null,
     "service_description": "The Mariatjenesten in Vesterbro is a day shelter and counselling service offering the possibility to be part of a social community. It provides a space where even the most marginalised can find belonging and support.",
     "opening_hours": {
-        "Monday": "18:00-22:00",
-        "Tuesday": "12:00-16:00",
-        "Wednesday": "12:00-16:00 & 18:00-22:00",
-        "Thursday": "18:00-22:00",
-        "Friday": "12:00-16:00",
-        "Saturday": "Closed",
-        "Sunday": "Closed"
+      "weekly": {
+        "1": [
+          {
+            "opens": "18:00",
+            "closes": "22:00"
+          }
+        ],
+        "2": [
+          {
+            "opens": "12:00",
+            "closes": "16:00"
+          }
+        ],
+        "3": [
+          {
+            "opens": "12:00",
+            "closes": "16:00"
+          },
+          {
+            "opens": "18:00",
+            "closes": "22:00"
+          }
+        ],
+        "4": [
+          {
+            "opens": "18:00",
+            "closes": "22:00"
+          }
+        ],
+        "5": [
+          {
+            "opens": "12:00",
+            "closes": "16:00"
+          }
+        ],
+        "6": [],
+        "0": []
+      }
     },
     "service_news": [
       {
-          "title": "New opening hours",
-          "date": "2026-11-15",
-          "description": "We have updated our opening hours for the winter season."
+        "title": "New opening hours",
+        "date": "2026-11-15",
+        "description": "We have updated our opening hours for the winter season."
       },
       {
-          "title": "Christmas event",
-          "date": "2026-11-10",
-          "description": "Join us for our annual Christmas event."
+        "title": "Christmas event",
+        "date": "2026-11-10",
+        "description": "Join us for our annual Christmas event."
       }
     ],
-
     "service_long": "12.56036372449081",
     "service_lat": "55.671837787169125"
   },
@@ -74,17 +104,17 @@
       {
         "id": "3",
         "label": "Hot shower",
-        "iconPath": "/icons/shower.svg"
+        "icon": "shower"
       },
       {
         "id": "7",
         "label": "Legal advice",
-        "iconPath": "/icons/advice.svg"
+        "icon": "advice"
       },
       {
         "id": "5",
         "label": "Warm clothes",
-        "iconPath": "/icons/clothes.svg"
+        "icon": "clothes"
       }
     ],
     "service_street": "Hillerødgade",
@@ -101,24 +131,61 @@
     "deleted_at": null,
     "service_description": "The shelter offers temporary accommodation to people with specific social problems who do not have, or cannot stay in, their own homes, and who are in need of support, care, and subsequent assistance.",
     "opening_hours": {
-        "Monday": "OPEN 24/7",
-        "Tuesday": "OPEN 24/7",
-        "Wednesday": "OPEN 24/7",
-        "Thursday": "OPEN 24/7",
-        "Friday": "OPEN 24/7",
-        "Saturday": "OPEN 24/7",
-        "Sunday": "OPEN 24/7"
+      "weekly": {
+        "1": [
+          {
+            "opens": "00:00",
+            "closes": "00:00"
+          }
+        ],
+        "2": [
+          {
+            "opens": "00:00",
+            "closes": "00:00"
+          }
+        ],
+        "3": [
+          {
+            "opens": "00:00",
+            "closes": "00:00"
+          }
+        ],
+        "4": [
+          {
+            "opens": "00:00",
+            "closes": "00:00"
+          }
+        ],
+        "5": [
+          {
+            "opens": "00:00",
+            "closes": "00:00"
+          }
+        ],
+        "6": [
+          {
+            "opens": "00:00",
+            "closes": "00:00"
+          }
+        ],
+        "0": [
+          {
+            "opens": "00:00",
+            "closes": "00:00"
+          }
+        ]
+      }
     },
     "service_news": [
       {
-          "title": "New opening hours",
-          "date": "2026-11-15",
-          "description": "We have updated our opening hours for the winter season."
+        "title": "New opening hours",
+        "date": "2026-11-15",
+        "description": "We have updated our opening hours for the winter season."
       },
       {
-          "title": "Christmas event",
-          "date": "2026-11-10",
-          "description": "Join us for our annual Christmas event."
+        "title": "Christmas event",
+        "date": "2026-11-10",
+        "description": "Join us for our annual Christmas event."
       }
     ],
     "service_long": "12.531774982164166",
@@ -136,17 +203,17 @@
       {
         "id": "2",
         "label": "Place to sleep",
-        "iconPath": "/icons/shelter.svg"
+        "icon": "shelter"
       },
       {
         "id": "6",
         "label": "Healtcare",
-        "iconPath": "/icons/health.svg"
+        "icon": "health"
       },
       {
         "id": "3",
         "label": "Hot shower",
-        "iconPath": "/icons/shower.svg"
+        "icon": "shower"
       }
     ],
     "service_street": "Kapelvej",
@@ -163,24 +230,61 @@
     "deleted_at": null,
     "service_description": "The emergency night shelter at Hellig Kors Church is an overnight service available throughout the winter season. It provides shelter for the night for 40 vulnerable individuals. The shelter offers emergency overnight accommodation to vulnerable people. It also facilitates connections to other relevant services that users need help accessing- such as hospitals, psychiatric care, medical clinics, physiotherapy, detoxification programs, legal advice, and more. The opening hours are only valid during the winter months.",
     "opening_hours": {
-        "Monday": "22:00-06:45",
-        "Tuesday": "22:00-06:45",
-        "Wednesday": "22:00-06:45",
-        "Thursday": "22:00-06:45",
-        "Friday": "22:00-06:45",
-        "Saturday": "22:00-06:45",
-        "Sunday": "22:00-06:45"
+      "weekly": {
+        "1": [
+          {
+            "opens": "22:00",
+            "closes": "06:45"
+          }
+        ],
+        "2": [
+          {
+            "opens": "22:00",
+            "closes": "06:45"
+          }
+        ],
+        "3": [
+          {
+            "opens": "22:00",
+            "closes": "06:45"
+          }
+        ],
+        "4": [
+          {
+            "opens": "22:00",
+            "closes": "06:45"
+          }
+        ],
+        "5": [
+          {
+            "opens": "22:00",
+            "closes": "06:45"
+          }
+        ],
+        "6": [
+          {
+            "opens": "22:00",
+            "closes": "06:45"
+          }
+        ],
+        "0": [
+          {
+            "opens": "22:00",
+            "closes": "06:45"
+          }
+        ]
+      }
     },
     "service_news": [
       {
-          "title": "New opening hours",
-          "date": "2026-11-15",
-          "description": "We have updated our opening hours for the winter season."
+        "title": "New opening hours",
+        "date": "2026-11-15",
+        "description": "We have updated our opening hours for the winter season."
       },
       {
-          "title": "Christmas event",
-          "date": "2026-11-10",
-          "description": "Join us for our annual Christmas event."
+        "title": "Christmas event",
+        "date": "2026-11-10",
+        "description": "Join us for our annual Christmas event."
       }
     ],
     "service_long": "12.55141756682027",
