@@ -1,7 +1,7 @@
 export type accommodation = {
   id: string;
   label: string;
-  iconPath?: string;
+  icon?: string;
 };
 
 export const accommodations: accommodation[] = [

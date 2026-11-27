@@ -1,5 +1,6 @@
 
 import type { accommodation } from './accommodation.type'
+import type { OpeningHours } from './openingHours.type'
 
 export type service = {
     service_pk: string
@@ -23,7 +24,7 @@ export type service = {
     updated_at: string
     deleted_at: string | null
     service_description: string
-    opening_hours: Record<string, string>
+    opening_hours: OpeningHours
     service_news: {
         title: string
         date: string
